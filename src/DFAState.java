@@ -10,10 +10,49 @@ public class DFAState {
         ItemSet = new ArrayList<Item>();
     }
 
-    public void addNewItem(Item it){
-        if(!ItemSet.contains(it))
-             ItemSet.add(it);
+
+    //该项集是否与另一个相同
+    public boolean isSame(DFAState state){
+
+        if(ItemSet.size()!=state.getItemSetSize()) {
+            return false;
+        }
+        for(int i=0;i<ItemSet.size();i++){
+            if(!this.getItem(i).isSame(state.getItem(i)))
+                return false;
+        }
+
+        return true;
+
+
     }
+
+    public String toString(){
+        String result = "";
+        for(int i = 0;i < ItemSet.size();i++){
+            result =result+ItemSet.get(i).getPointIndex()+ItemSet.get(i).getDSize();
+        }
+        return result;
+    }
+
+    //增加一个不重复的项
+    public void addNewItem(Item it){
+
+        if(!isContained(it))
+            ItemSet.add(it);
+
+    }
+
+    //项集是否包含该项
+     public boolean isContained(Item it){
+        for(Item item:ItemSet){
+            if(item.isSame(it)) {
+                return true;
+
+            }
+        }
+        return false;
+     }
 
     public int getItemSetSize(){
         return ItemSet.size();
@@ -45,10 +84,21 @@ public class DFAState {
             if(it.getPointIndex()!=it.getDSize() ){
                  String strAfterPoint = it.getStrAfterPoint();
                  if(strAfterPoint.equals(jump))
-                     res.add(it);
+                     res.add(it.clone());//不能把it直接加入结果集，因为IT是引用类型，其值可能发生改变。
             }
         }
 
         return res;
     }
+
+    public void changeStateId(int id){
+        this.id =id;
+    }
+
+    public int getStateId(){
+        return this.id;
+    }
+
+
+
 }

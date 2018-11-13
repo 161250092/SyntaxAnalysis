@@ -12,6 +12,25 @@ public class Item {
         this.d = d;
     }
 
+    public boolean isSame(Item it){
+
+        if(PointIndex!=it.getPointIndex()) {
+           //System.out.println("点不同");
+            return false;
+        }
+
+        if(!predictiveSymbol.equals(it.predictiveSymbol)) {
+           //System.out.println("预测符号不同");
+            return false;
+        }
+
+        if(!d.isSame(it.getD()) ) {
+           //System.out.println("表达式不同");
+            return false;
+        }
+
+        return true;
+    }
 
     public int getPointIndex() {
         return PointIndex;
@@ -36,6 +55,21 @@ public class Item {
     public String getStrAfterB(){
         return d.getNItem(PointIndex+1);
     }
+
+    public void addIndex(){
+        PointIndex++;
+    }
+
+
+    /**
+     * 此处额外说明，
+     * @return
+     */
+    public Item clone(){
+
+        return new Item(d,PointIndex,predictiveSymbol);
+    }
+
 
 
 

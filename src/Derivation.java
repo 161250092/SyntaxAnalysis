@@ -24,6 +24,22 @@ public class Derivation {
        this.left = left;
     }
 
+    public boolean isSame(Derivation d){
+        //left and right compare
+
+        if(!left.equals(d.getLeft()))
+            return false;
+
+        if(right.size()!=d.getRightSize())
+            return false;
+
+        for(int i=0;i<right.size();i++){
+            if(!right.get(i).equals(d.right.get(i)))
+                return false;
+        }
+
+        return true;
+    }
     public String getLeft(){
         return left;
     }

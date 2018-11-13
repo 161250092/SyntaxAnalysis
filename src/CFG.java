@@ -150,6 +150,17 @@ public class CFG {
     }
 
 
+    public  static int  getGammaIndex(Derivation reduceD){
+        int res = -1;
+        for(int i=0;i<p.size();i++){
+            if(reduceD.isSame(p.get(i)))
+                return i;
+        }
+
+        return -1;
+    }
+
+
 }
 
 
