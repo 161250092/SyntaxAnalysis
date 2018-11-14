@@ -1,0 +1,419 @@
+共有46个项集
+I0
+S' -> S  (0 ,$ )
+S -> if ( B ) S ;  (0 ,$ )
+S -> if ( B ) S ; else S ;  (0 ,$ )
+S -> id = E  (0 ,$ )
+S -> S ; S  (0 ,$ )
+S -> if ( B ) S ;  (0 ,; )
+S -> if ( B ) S ; else S ;  (0 ,; )
+S -> id = E  (0 ,; )
+S -> S ; S  (0 ,; )
+
+I1
+S' -> S  (1 ,$ )
+S -> S ; S  (1 ,$ )
+S -> S ; S  (1 ,; )
+
+I2
+S -> S ; S  (2 ,$ )
+S -> S ; S  (2 ,; )
+S -> if ( B ) S ;  (0 ,$ )
+S -> if ( B ) S ; else S ;  (0 ,$ )
+S -> id = E  (0 ,$ )
+S -> S ; S  (0 ,$ )
+S -> if ( B ) S ;  (0 ,; )
+S -> if ( B ) S ; else S ;  (0 ,; )
+S -> id = E  (0 ,; )
+S -> S ; S  (0 ,; )
+
+I3
+S -> S ; S  (3 ,$ )
+S -> S ; S  (3 ,; )
+S -> S ; S  (1 ,$ )
+S -> S ; S  (1 ,; )
+
+I4
+S -> if ( B ) S ;  (1 ,$ )
+S -> if ( B ) S ; else S ;  (1 ,$ )
+S -> if ( B ) S ;  (1 ,; )
+S -> if ( B ) S ; else S ;  (1 ,; )
+
+I5
+S -> if ( B ) S ;  (2 ,$ )
+S -> if ( B ) S ; else S ;  (2 ,$ )
+S -> if ( B ) S ;  (2 ,; )
+S -> if ( B ) S ; else S ;  (2 ,; )
+B -> B >= B  (0 ,) )
+B -> num  (0 ,) )
+B -> id  (0 ,) )
+B -> B >= B  (0 ,>= )
+B -> num  (0 ,>= )
+B -> id  (0 ,>= )
+
+I6
+S -> if ( B ) S ;  (3 ,$ )
+S -> if ( B ) S ; else S ;  (3 ,$ )
+S -> if ( B ) S ;  (3 ,; )
+S -> if ( B ) S ; else S ;  (3 ,; )
+B -> B >= B  (1 ,) )
+B -> B >= B  (1 ,>= )
+
+I7
+S -> if ( B ) S ;  (4 ,$ )
+S -> if ( B ) S ; else S ;  (4 ,$ )
+S -> if ( B ) S ;  (4 ,; )
+S -> if ( B ) S ; else S ;  (4 ,; )
+S -> if ( B ) S ;  (0 ,; )
+S -> if ( B ) S ; else S ;  (0 ,; )
+S -> id = E  (0 ,; )
+S -> S ; S  (0 ,; )
+
+I8
+S -> if ( B ) S ;  (5 ,$ )
+S -> if ( B ) S ; else S ;  (5 ,$ )
+S -> if ( B ) S ;  (5 ,; )
+S -> if ( B ) S ; else S ;  (5 ,; )
+S -> S ; S  (1 ,; )
+
+I9
+S -> if ( B ) S ;  (6 ,$ )
+S -> if ( B ) S ; else S ;  (6 ,$ )
+S -> if ( B ) S ;  (6 ,; )
+S -> if ( B ) S ; else S ;  (6 ,; )
+S -> S ; S  (2 ,; )
+S -> if ( B ) S ;  (0 ,; )
+S -> if ( B ) S ; else S ;  (0 ,; )
+S -> id = E  (0 ,; )
+S -> S ; S  (0 ,; )
+
+I10
+S -> if ( B ) S ; else S ;  (7 ,$ )
+S -> if ( B ) S ; else S ;  (7 ,; )
+S -> if ( B ) S ;  (0 ,; )
+S -> if ( B ) S ; else S ;  (0 ,; )
+S -> id = E  (0 ,; )
+S -> S ; S  (0 ,; )
+
+I11
+S -> if ( B ) S ; else S ;  (8 ,$ )
+S -> if ( B ) S ; else S ;  (8 ,; )
+S -> S ; S  (1 ,; )
+
+I12
+S -> if ( B ) S ; else S ;  (9 ,$ )
+S -> if ( B ) S ; else S ;  (9 ,; )
+S -> S ; S  (2 ,; )
+S -> if ( B ) S ;  (0 ,; )
+S -> if ( B ) S ; else S ;  (0 ,; )
+S -> id = E  (0 ,; )
+S -> S ; S  (0 ,; )
+
+I13
+S -> S ; S  (3 ,; )
+S -> S ; S  (1 ,; )
+
+I14
+S -> S ; S  (2 ,; )
+S -> if ( B ) S ;  (0 ,; )
+S -> if ( B ) S ; else S ;  (0 ,; )
+S -> id = E  (0 ,; )
+S -> S ; S  (0 ,; )
+
+I15
+S -> if ( B ) S ;  (1 ,; )
+S -> if ( B ) S ; else S ;  (1 ,; )
+
+I16
+S -> if ( B ) S ;  (2 ,; )
+S -> if ( B ) S ; else S ;  (2 ,; )
+B -> B >= B  (0 ,) )
+B -> num  (0 ,) )
+B -> id  (0 ,) )
+B -> B >= B  (0 ,>= )
+B -> num  (0 ,>= )
+B -> id  (0 ,>= )
+
+I17
+S -> if ( B ) S ;  (3 ,; )
+S -> if ( B ) S ; else S ;  (3 ,; )
+B -> B >= B  (1 ,) )
+B -> B >= B  (1 ,>= )
+
+I18
+S -> if ( B ) S ;  (4 ,; )
+S -> if ( B ) S ; else S ;  (4 ,; )
+S -> if ( B ) S ;  (0 ,; )
+S -> if ( B ) S ; else S ;  (0 ,; )
+S -> id = E  (0 ,; )
+S -> S ; S  (0 ,; )
+
+I19
+S -> if ( B ) S ;  (5 ,; )
+S -> if ( B ) S ; else S ;  (5 ,; )
+S -> S ; S  (1 ,; )
+
+I20
+S -> if ( B ) S ;  (6 ,; )
+S -> if ( B ) S ; else S ;  (6 ,; )
+S -> S ; S  (2 ,; )
+S -> if ( B ) S ;  (0 ,; )
+S -> if ( B ) S ; else S ;  (0 ,; )
+S -> id = E  (0 ,; )
+S -> S ; S  (0 ,; )
+
+I21
+S -> if ( B ) S ; else S ;  (7 ,; )
+S -> if ( B ) S ;  (0 ,; )
+S -> if ( B ) S ; else S ;  (0 ,; )
+S -> id = E  (0 ,; )
+S -> S ; S  (0 ,; )
+
+I22
+S -> if ( B ) S ; else S ;  (8 ,; )
+S -> S ; S  (1 ,; )
+
+I23
+S -> if ( B ) S ; else S ;  (9 ,; )
+S -> S ; S  (2 ,; )
+S -> if ( B ) S ;  (0 ,; )
+S -> if ( B ) S ; else S ;  (0 ,; )
+S -> id = E  (0 ,; )
+S -> S ; S  (0 ,; )
+
+I24
+S -> id = E  (1 ,; )
+
+I25
+S -> id = E  (2 ,; )
+E -> E + E  (0 ,; )
+E -> E - E  (0 ,; )
+E -> num  (0 ,; )
+E -> id  (0 ,; )
+E -> E + E  (0 ,+ )
+E -> E - E  (0 ,+ )
+E -> num  (0 ,+ )
+E -> id  (0 ,+ )
+E -> E + E  (0 ,- )
+E -> E - E  (0 ,- )
+E -> num  (0 ,- )
+E -> id  (0 ,- )
+
+I26
+S -> id = E  (3 ,; )
+E -> E + E  (1 ,; )
+E -> E - E  (1 ,; )
+E -> E + E  (1 ,+ )
+E -> E - E  (1 ,+ )
+E -> E + E  (1 ,- )
+E -> E - E  (1 ,- )
+
+I27
+E -> E + E  (2 ,; )
+E -> E + E  (2 ,+ )
+E -> E + E  (2 ,- )
+E -> E + E  (0 ,; )
+E -> E - E  (0 ,; )
+E -> num  (0 ,; )
+E -> id  (0 ,; )
+E -> E + E  (0 ,+ )
+E -> E - E  (0 ,+ )
+E -> num  (0 ,+ )
+E -> id  (0 ,+ )
+E -> E + E  (0 ,- )
+E -> E - E  (0 ,- )
+E -> num  (0 ,- )
+E -> id  (0 ,- )
+
+I28
+E -> E + E  (3 ,; )
+E -> E + E  (3 ,+ )
+E -> E + E  (3 ,- )
+E -> E + E  (1 ,; )
+E -> E - E  (1 ,; )
+E -> E + E  (1 ,+ )
+E -> E - E  (1 ,+ )
+E -> E + E  (1 ,- )
+E -> E - E  (1 ,- )
+
+I29
+E -> E - E  (2 ,; )
+E -> E - E  (2 ,+ )
+E -> E - E  (2 ,- )
+E -> E + E  (0 ,; )
+E -> E - E  (0 ,; )
+E -> num  (0 ,; )
+E -> id  (0 ,; )
+E -> E + E  (0 ,+ )
+E -> E - E  (0 ,+ )
+E -> num  (0 ,+ )
+E -> id  (0 ,+ )
+E -> E + E  (0 ,- )
+E -> E - E  (0 ,- )
+E -> num  (0 ,- )
+E -> id  (0 ,- )
+
+I30
+E -> E - E  (3 ,; )
+E -> E - E  (3 ,+ )
+E -> E - E  (3 ,- )
+E -> E + E  (1 ,; )
+E -> E - E  (1 ,; )
+E -> E + E  (1 ,+ )
+E -> E - E  (1 ,+ )
+E -> E + E  (1 ,- )
+E -> E - E  (1 ,- )
+
+I31
+E -> num  (1 ,; )
+E -> num  (1 ,+ )
+E -> num  (1 ,- )
+
+I32
+E -> id  (1 ,; )
+E -> id  (1 ,+ )
+E -> id  (1 ,- )
+
+I33
+B -> B >= B  (2 ,) )
+B -> B >= B  (2 ,>= )
+B -> B >= B  (0 ,) )
+B -> num  (0 ,) )
+B -> id  (0 ,) )
+B -> B >= B  (0 ,>= )
+B -> num  (0 ,>= )
+B -> id  (0 ,>= )
+
+I34
+B -> B >= B  (3 ,) )
+B -> B >= B  (3 ,>= )
+B -> B >= B  (1 ,) )
+B -> B >= B  (1 ,>= )
+
+I35
+B -> num  (1 ,) )
+B -> num  (1 ,>= )
+
+I36
+B -> id  (1 ,) )
+B -> id  (1 ,>= )
+
+I37
+S -> id = E  (1 ,$ )
+S -> id = E  (1 ,; )
+
+I38
+S -> id = E  (2 ,$ )
+S -> id = E  (2 ,; )
+E -> E + E  (0 ,$ )
+E -> E - E  (0 ,$ )
+E -> num  (0 ,$ )
+E -> id  (0 ,$ )
+E -> E + E  (0 ,; )
+E -> E - E  (0 ,; )
+E -> num  (0 ,; )
+E -> id  (0 ,; )
+E -> E + E  (0 ,+ )
+E -> E - E  (0 ,+ )
+E -> num  (0 ,+ )
+E -> id  (0 ,+ )
+E -> E + E  (0 ,- )
+E -> E - E  (0 ,- )
+E -> num  (0 ,- )
+E -> id  (0 ,- )
+
+I39
+S -> id = E  (3 ,$ )
+S -> id = E  (3 ,; )
+E -> E + E  (1 ,$ )
+E -> E - E  (1 ,$ )
+E -> E + E  (1 ,; )
+E -> E - E  (1 ,; )
+E -> E + E  (1 ,+ )
+E -> E - E  (1 ,+ )
+E -> E + E  (1 ,- )
+E -> E - E  (1 ,- )
+
+I40
+E -> E + E  (2 ,$ )
+E -> E + E  (2 ,; )
+E -> E + E  (2 ,+ )
+E -> E + E  (2 ,- )
+E -> E + E  (0 ,$ )
+E -> E - E  (0 ,$ )
+E -> num  (0 ,$ )
+E -> id  (0 ,$ )
+E -> E + E  (0 ,; )
+E -> E - E  (0 ,; )
+E -> num  (0 ,; )
+E -> id  (0 ,; )
+E -> E + E  (0 ,+ )
+E -> E - E  (0 ,+ )
+E -> num  (0 ,+ )
+E -> id  (0 ,+ )
+E -> E + E  (0 ,- )
+E -> E - E  (0 ,- )
+E -> num  (0 ,- )
+E -> id  (0 ,- )
+
+I41
+E -> E + E  (3 ,$ )
+E -> E + E  (3 ,; )
+E -> E + E  (3 ,+ )
+E -> E + E  (3 ,- )
+E -> E + E  (1 ,$ )
+E -> E - E  (1 ,$ )
+E -> E + E  (1 ,; )
+E -> E - E  (1 ,; )
+E -> E + E  (1 ,+ )
+E -> E - E  (1 ,+ )
+E -> E + E  (1 ,- )
+E -> E - E  (1 ,- )
+
+I42
+E -> E - E  (2 ,$ )
+E -> E - E  (2 ,; )
+E -> E - E  (2 ,+ )
+E -> E - E  (2 ,- )
+E -> E + E  (0 ,$ )
+E -> E - E  (0 ,$ )
+E -> num  (0 ,$ )
+E -> id  (0 ,$ )
+E -> E + E  (0 ,; )
+E -> E - E  (0 ,; )
+E -> num  (0 ,; )
+E -> id  (0 ,; )
+E -> E + E  (0 ,+ )
+E -> E - E  (0 ,+ )
+E -> num  (0 ,+ )
+E -> id  (0 ,+ )
+E -> E + E  (0 ,- )
+E -> E - E  (0 ,- )
+E -> num  (0 ,- )
+E -> id  (0 ,- )
+
+I43
+E -> E - E  (3 ,$ )
+E -> E - E  (3 ,; )
+E -> E - E  (3 ,+ )
+E -> E - E  (3 ,- )
+E -> E + E  (1 ,$ )
+E -> E - E  (1 ,$ )
+E -> E + E  (1 ,; )
+E -> E - E  (1 ,; )
+E -> E + E  (1 ,+ )
+E -> E - E  (1 ,+ )
+E -> E + E  (1 ,- )
+E -> E - E  (1 ,- )
+
+I44
+E -> num  (1 ,$ )
+E -> num  (1 ,; )
+E -> num  (1 ,+ )
+E -> num  (1 ,- )
+
+I45
+E -> id  (1 ,$ )
+E -> id  (1 ,; )
+E -> id  (1 ,+ )
+E -> id  (1 ,- )

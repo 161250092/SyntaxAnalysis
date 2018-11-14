@@ -16,13 +16,13 @@ public class PasringTable {
 
     // table body
     String[][] actionTable;
-    String[][] gotoTable;
+    int[][] gotoTable;
 
 
     public PasringTable(){
         dfa = new DFA();
         dfa.constructDFA();
-        System.out.println(dfa.begin.size()+" "+dfa.shift.size());
+// System.out.println(dfa.begin.size()+" "+dfa.shift.size());
 
         stateNum = dfa.getStateNum();
 
@@ -31,6 +31,26 @@ public class PasringTable {
 
         this.initHeader();
         this.initTable();
+
+        System.out.println("分析表：");
+        System.out.print("state  ");
+        for(int i=0;i<actionCol;i++)
+            System.out.print(this.actionItems[i]+" ");
+        for(int i=0;i<gotoCol-1;i++)
+            System.out.print(this.gotoItems[i]+" ");
+        System.out.println();
+
+
+
+        for(int i=0;i<stateNum;i++){
+            System.out.print(i+" ");
+            for(int j=0;j<actionCol;j++)
+                System.out.print(actionTable[i][j]+" ");
+            for(int j=0;j<gotoCol-1;j++)
+                System.out.print(gotoTable[i][j]+" ");
+
+            System.out.println();
+        }
 
     }
 
@@ -42,6 +62,7 @@ public class PasringTable {
             actionItems[index] =s;
             index++;
         }
+        actionItems[index] = "$";
         index = 0;
         for(String s:CFG.vn){
             gotoItems[index] = s;
@@ -53,32 +74,14 @@ public class PasringTable {
 
 
         actionTable = new String[stateNum][actionCol];
-        gotoTable = new String[stateNum][gotoCol];
+        gotoTable = new int[stateNum][gotoCol];
 
 
         for(int i=0;i<stateNum;i++){
             for(int j=0;j<actionCol;j++)
-                actionTable[i][j]="error";
-            for(int j=0;j<actionCol;j++)
-                gotoTable[i][j] =-1+"";
-        }
-
-        //action goto  shift part in table
-        for(int i=0;i<dfa.begin.size();i++){ //i: all jump record 90
-            for(int j=0;j<stateNum;j++){//j point stateId
-                if(dfa.begin.get(i) == j){
-                    if(CFG.vt.contains(dfa.shift.get(i))) {
-                        int jumpIndex = turnActionJumpToIndex(dfa.shift.get(i));
-                        actionTable[j][jumpIndex] = "S"+dfa.end.get(i);
-                    }
-
-                    else if(CFG.vn.contains((dfa.shift.get(i)))){
-                        int jumpIndex = turnGotoJumpToIndex(dfa.shift.get(i));
-                        gotoTable[j][jumpIndex] = dfa.end.get(i)+"";
-                    }
-
-                }
-            }
+                actionTable[i][j]="x";
+            for(int j=0;j<gotoCol;j++)
+                gotoTable[i][j] =-1;
         }
 
         //reduce
@@ -92,18 +95,43 @@ public class PasringTable {
                     }
                     else {
                         int jumpIndex = turnActionJumpToIndex(state.getItem(j).getPredictiveSymbol());
+                        if(jumpIndex ==-1)
+                            System.out.print(state.getItem(j).getPredictiveSymbol());
+
                         actionTable[i][jumpIndex] ="R"+ CFG.getGammaIndex(state.getItem(j).getD());
                     }
                 }
             }
         }
 
+        //action goto  shift part in table
+        for(int i=0;i<dfa.begin.size();i++){ //i: all jump record 90
+            for(int j=0;j<stateNum;j++){//j point stateId
+                if(dfa.begin.get(i) == j){
+                    if(CFG.vt.contains(dfa.shift.get(i))) {
+                        int jumpIndex = turnActionJumpToIndex(dfa.shift.get(i));
+                        actionTable[j][jumpIndex] = "S"+dfa.end.get(i);
+                    }
+
+                    else if(CFG.vn.contains((dfa.shift.get(i)))){
+                        int jumpIndex = turnGotoJumpToIndex(dfa.shift.get(i));
+                        gotoTable[j][jumpIndex] = dfa.end.get(i);
+                    }
+
+                }
+            }
+        }
+
+
+
     }
 
 
     public int turnActionJumpToIndex(String jump){
+        if(jump.equals("$"))
+            return actionCol-1;
 
-        for(int i=0;i<CFG.vt.size();i++){
+        for(int i=0;i<actionCol;i++){
             if(jump.equals(actionItems[i]))
                 return i;
         }
@@ -111,7 +139,8 @@ public class PasringTable {
     }
 
     public int turnGotoJumpToIndex(String jump){
-        for(int i=0;i<CFG.vn.size();i++){
+
+        for(int i=0;i<gotoCol;i++){
             if(jump.equals(gotoItems[i]))
                 return i;
         }

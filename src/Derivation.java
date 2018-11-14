@@ -56,4 +56,9 @@ public class Derivation {
         return right.size();
     }
 
+
+
+    public ArrayList<String> getRight() {
+        return right;
+    }
 }

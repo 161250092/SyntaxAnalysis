@@ -1,8 +1,11 @@
 //项
 public class Item {
 
+    //项中 点的位置
     private int PointIndex;
+
     private String predictiveSymbol;
+
     private Derivation d;
 
 
@@ -70,7 +73,16 @@ public class Item {
         return new Item(d,PointIndex,predictiveSymbol);
     }
 
+    //打印项的内容
+    public void printItem(){
+        System.out.print(d.getLeft()+" -> ");
+        for(int i=0;i<d.getRightSize();i++){
+                System.out.print(d.getRight().get(i)+" ");
+        }
+        System.out.print(" ("+PointIndex+" ,"+predictiveSymbol+" )");
 
+        System.out.println();
+    }
 
 
 

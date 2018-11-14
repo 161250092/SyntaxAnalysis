@@ -26,7 +26,7 @@ public class CFG {
 //        S'->S
 //        S->if ( B ) S ;|if ( B ) S ; else S ;|id = E|S ; S
 //        B->B >= B|num|id
-//        E->E + E|E * E|num|id
+//        E->E + E|E - E|num|id
 
         vn.add("S");
         vn.add("S'");
@@ -34,7 +34,7 @@ public class CFG {
         vn.add("E");
 
         vt.add("if");vt.add("else");vt.add(";");vt.add("=");vt.add(">=");
-        vt.add("num");vt.add("id");vt.add("*");vt.add("+");
+        vt.add("num");vt.add("id");vt.add("-");vt.add("+");
         vt.add("(");vt.add(")");
 
         getFirstSet();
@@ -109,7 +109,7 @@ public class CFG {
                     set.add(d.getFirstItem());
                 else
                 {
-                    if(!vn.equals(d.getFirstItem()))
+                    if(!vn.equals(d.getFirstItem()))//避免左递归
                         set.addAll(findFirst(d.getFirstItem()));
                 }
 
@@ -120,7 +120,7 @@ public class CFG {
     }
 
 
-    //获取VN的推导
+    //获取非终结符vn的推导
     public static ArrayList<Derivation>  getDerivation(String vn){
         ArrayList<Derivation>  res = new ArrayList<Derivation>();
         for(Derivation d:p){
@@ -134,7 +134,7 @@ public class CFG {
     //获取一个文法串的FIRST SET，即求FIRST(beta a)
 
     /**
-     * v可能为终结符或者非终结符
+     * v为终结符或者非终结符，而非一个文法串
      * @param v
      * @return
      */
@@ -149,17 +149,15 @@ public class CFG {
         return res;
     }
 
-
+//根据产生式求产生式的编号
     public  static int  getGammaIndex(Derivation reduceD){
         int res = -1;
         for(int i=0;i<p.size();i++){
             if(reduceD.isSame(p.get(i)))
                 return i;
         }
-
         return -1;
     }
-
 
 }
 

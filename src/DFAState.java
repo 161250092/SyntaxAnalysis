@@ -99,6 +99,14 @@ public class DFAState {
         return this.id;
     }
 
+    //打印项集的内容
+    public void showDFAState(){
+        System.out.println("I"+id);
+        for(Item it:ItemSet)
+            it.printItem();
+        System.out.println();
+
+    }
 
 
 }

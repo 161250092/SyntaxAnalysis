@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class DFA {
     private ArrayList<DFAState> states;
 
-    //用以记录
+    //以下三个LIST长度相等   begin[i],end[i],shift[i] 代表从状态begin[i] 通过shift[i] 转移到状态end[i]
     public ArrayList<Integer> begin = new ArrayList<Integer>();
     public ArrayList<Integer> end = new ArrayList<Integer>();
     public ArrayList<String>  shift = new ArrayList<String>();
@@ -150,4 +150,9 @@ public class DFA {
         return states.size();
     }
 
+    public void showDFA(){
+        //System.out.println("共有"+states.size()+"个项集");
+        for(DFAState s:states)
+            s.showDFAState();
+    }
 }
